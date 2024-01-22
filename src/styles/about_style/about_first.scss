@@ -1,0 +1,133 @@
+.about_first{
+  height: 50vh;
+  background-image: linear-gradient(180deg, #294861, #2A454B, #0E1C26);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about_first_header{
+  text-align: center;
+  font-size: 3rem;
+}
+.about_section_2{
+  border-radius: 0.5rem;
+  box-shadow: 0 -1px 10px 4px #ffff;
+}
+.about_header_1{
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.about_section_3{
+  background-image: linear-gradient(180deg, #294861, #2A454B, #0E1C26);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 -8px 10px -1px #294861;
+}
+.header_whyus{
+  margin: 2rem 0 3rem 0;
+  font-weight: bold;
+}
+.reason{
+  margin: 2rem 0 2rem 0;
+  font-size: 24px;
+}
+.about_card{
+  border: 2px solid #294861;
+  border-radius: 2rem;
+  background-color: #0E1C26;
+}
+.whyus_image{
+  width: 200px;
+}
+.row-1{
+  margin-bottom: 2rem;
+}
+.about_card_body{
+  padding: 4rem;
+}
+.about_card_desc{
+  margin-bottom: 0;
+}
+.about_process{
+  // border: 2px solid #294861;
+  border-radius: 2rem;
+  // box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+}
+.about_process_body{
+  padding: 4rem;
+}
+.about_section_4{
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 -8px 10px -1px #ffff;
+}
+.header_process{
+  font-weight: bold;
+  margin: 2rem 0 3rem 0;
+}
+.process_heading{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 2rem 0 2rem 0;
+}
+.step_image{
+  width: 200px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .about_header_1{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .about_card_body{
+    padding: 2rem;
+  }
+  .last_card{
+    margin: 2rem auto;
+  }
+  .about_process_body{
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 468px) and (max-width: 767px){
+  .about_card_body{
+    padding: 2rem;
+  }
+  .about_process_body{
+    padding: 2rem;
+  }
+  
+}
+@media screen and (min-width: 300px) and (max-width: 467px){
+  .about_card_body{
+    padding: 2rem;
+  }
+  .about_first_header{
+    font-size: 2rem;
+  }
+  .reason{
+    font-size: 18px;
+  }
+  .about_card_desc{
+    font-size: 14px;
+  }
+  .whyus_image{
+    width: 150px;
+  }
+  .about_process_body{
+    padding: 2rem;
+  }
+  .process_heading{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2rem 0 2rem 0;
+  }
+  .step_image{
+    width: 150px;
+  }
+}

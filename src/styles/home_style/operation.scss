@@ -1,0 +1,115 @@
+.section-5{
+  background-image: linear-gradient(180deg, #294861, #2A454B, #0E1C26);
+  color: white;
+  padding: 5rem 3rem 4rem 3rem!important;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 -1px 10px 4px #294861;
+
+  .section-heading{
+    margin-bottom: 0.75rem;
+  }
+  .product-content-tabs--heading{
+    font-size: 18px;
+  }
+  .desc{
+    font-size: 14px !important;
+    line-height: 24px;
+  }
+  .sub-title{
+    font-size: 16px;
+    margin-bottom: 2rem;
+    
+  }
+  .tab-list{
+    position: relative;
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+  .tab-list::before{
+    content: "";
+    width: 2px;
+    height: 105%;
+    position: absolute;
+    background-color: #59AAEC;
+    top: -15px;
+    left: 0px;
+  }
+  .tab-item{
+    position: relative;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+  .tab-item:first-child{
+    margin-top: 24px;
+  }
+  .tab-item.active::before{
+    width: 9px;
+    height: 50px;
+    background-color: #7FC37E;
+    left: -28px;
+    top: -15px;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  .tab-item::before{
+    content: "";
+    width: 6px;
+    height: 20px;
+    background-color: #EFEAEA;
+    display: block;
+    position: absolute;
+    border-radius: 8px;
+    left: -26px;
+    top: 3px;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  .tab-item.active.product-content-tabs_desc{
+    display: block;
+  }
+  .tab-item.product-content-tabs_desc{
+    display: none;
+  }
+
+  .vid-content{
+    position: relative;
+    left: 0;
+    
+  }
+  .vid{
+    position: absolute;
+    top: 3%;
+    right: 8%;
+  }
+  .vid-img{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    img{
+      vertical-align: middle;
+    }
+    .img-border{
+      position: absolute;
+      top: -37px;
+      right: -37px;
+    }
+  }
+}
+@media screen and (max-width: 576px){
+  .section-5{
+    .vid{
+      position: relative;
+      margin-top: 2rem;
+    }
+    .desc{
+      font-size: 0.8rem;
+      line-height: 1.4rem;
+    }
+    .sub-title{
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+  }
+}
