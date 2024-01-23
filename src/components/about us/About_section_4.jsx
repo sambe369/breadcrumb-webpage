@@ -1,6 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react';
+import Process from '../../assets/Process';
 
 const About_section_4 = () => {
+  const [processes, setProcesses] = useState([
+    {
+      title: '1. Articulate your proposal',
+      image: 'lightbulb.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    },
+    {
+      title: '2. Project specification',
+      image: 'target.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    },
+    {
+      title: 'Design and development',
+      image: 'lightbulb.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    },
+    {
+      title: '4. Testing and stabilizing',
+      image: 'lightbulb.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    },
+    {
+      title: '5. Project deployment and handover',
+      image: 'lightbulb.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    },
+    {
+      title: '6. Maintainence and support',
+      image: 'support.svg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?'
+    }
+  ])
   return (
     <div>
       <section className="about_section_4 p-5">
@@ -9,60 +42,9 @@ const About_section_4 = () => {
           Our process
         </h2>
         <div className="row row-1 gy-4">
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="lightbulb.svg" alt="" />
-                <h3 className="process_heading">1. Articulate your proposal</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="target.svg" alt="" />
-                <h3 className="process_heading">2. Project specification</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="lightbulb.svg" alt="" />
-                <h3 className="process_heading">3. Design and development</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="lightbulb.svg" alt="" />
-                <h3 className="process_heading">4. Testing and stabilizing</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="lightbulb.svg" alt="" />
-                <h3 className="process_heading">5. Project deployment and handover</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
-          <div className="col-md-6 col-lg-4">
-            <div className="about_process">
-              <div className="about_process_body text-center">
-                <img className="step_image img-fluid" src="support.svg" alt="" />
-                <h3 className="process_heading">6. Maintainence and support</h3>
-                <p className="about_card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?</p>
-              </div>
-            </div>
-          </div>      
+          {processes.map((process) => {
+            return <Process title={process.title} image={process.image} desc={process.desc} />;
+          })}     
         </div>
         </div>
       </section>
