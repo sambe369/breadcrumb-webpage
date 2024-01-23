@@ -1,5 +1,5 @@
 import React from 'react';
-import {FiArrowRightCircle} from "react-icons/Fi";
+
 
 export const Section_1 = () => {
   return (
