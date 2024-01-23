@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../styles/contact_style/contact.scss";
-import Contact_heading from './contact_heading';
+import Contact_heading from './Contact_heading';
 import Contact_content from './Contact_content';
 
 const Contact = () => {
