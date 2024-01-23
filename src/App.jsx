@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Services from "./components/services/Services";
 import Contact from "./components/contact/contact";
 import About from "./components/about us/About";
-import Blog from "./components/blog/blog";
+import Blog from "./components/blog/Blog";
 import Career from "./components/career/Career";
 import "./styles/App.scss";
 import "./styles/header.scss";
