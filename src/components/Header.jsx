@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {FiArrowRightCircle} from "react-icons/Fi";
+// import {FiArrowRightCircle} from "react-icons/Fi";
 
 export const Header = () => {
   return (
@@ -36,7 +36,9 @@ export const Header = () => {
             </li>
             <li className="nav-item mx-2">
               <div className="get-started">
-                <a className='text-decoration-none' href="/contact"><button className='button d-flex justify-content-center align-items-center gap-2 '><span>Get Started</span><FiArrowRightCircle className='right-icon' /></button></a>
+                <a className='text-decoration-none' href="/contact"><button className='button d-flex justify-content-center align-items-center gap-2 '><span>Get Started</span>
+                 
+                </button></a>
               </div>
             </li>
           </ul>
