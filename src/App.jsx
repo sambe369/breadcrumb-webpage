@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import {Header} from "./components/Header";
 import { Footer } from "./components/home/footer";
 import Home from "./components/Home";
@@ -22,21 +22,19 @@ import "./styles/home_style/slider.scss";
 
 
 export const App =() => {
-  return(
-    <Router>
-      <Header /> 
+  return (
+    <div>
+      <Header />
       <Routes>
-      
-        <Route path="/" element={<Home />}/>
-        <Route path="/services" element={<Services />}/>
-        <Route path="/contact" element={<Contact />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/blog" element={<Blog />}/>
-        <Route path="/career" element={<Career />}/>
-      
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
-    </Router>
+    </div>
   );
   
 }
