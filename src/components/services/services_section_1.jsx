@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Services_section_1 = () => {
   return (
@@ -11,7 +11,7 @@ const Services_section_1 = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Services_section_1
+export default Services_section_1;

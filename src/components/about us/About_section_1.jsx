@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const About_section_1 = () => {
   return (
@@ -6,15 +6,16 @@ const About_section_1 = () => {
       <section className="about_first p-5">
         <div className="container">
           <div className="row">
-            
             <div className="col-md">
-              <span><h1 className='about_first_header'>Get to know us</h1></span> 
+              <span>
+                <h1 className="about_first_header">Get to know us</h1>
+              </span>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default About_section_1
+export default About_section_1;

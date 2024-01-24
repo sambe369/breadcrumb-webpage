@@ -1,5 +1,5 @@
-import {Routes, Route} from "react-router-dom";
-import {Header} from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import { Header } from "./components/Header";
 import { Footer } from "./components/home/footer";
 import Home from "./components/Home";
 import Services from "./components/services/Services";
@@ -20,8 +20,7 @@ import "./styles/home_style/home_section_2.scss";
 import "./styles/home_style/home_section_3.scss";
 import "./styles/home_style/slider.scss";
 
-
-export const App =() => {
+export const App = () => {
   return (
     <div>
       <Header />
@@ -36,7 +35,4 @@ export const App =() => {
       <Footer />
     </div>
   );
-  
-}
-
-
+};
