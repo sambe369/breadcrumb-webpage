@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 // import {FiArrowRightCircle} from "react-icons/Fi";
 
 export const Header = () => {
@@ -32,46 +32,46 @@ export const Header = () => {
           <div className="collapse navbar-collapse" id="navmenu">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item mx-2">
-                <a
-                  className="nav-link active item"
+                <NavLink
+                  className="nav-link item"
                   aria-current="page"
-                  href="/"
+                  to="/"
                 >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link item" href="/services">
+                <NavLink className="nav-link item" to="/services">
                   Services
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link item" href="/about">
+                <NavLink className="nav-link item" to="/about">
                   About Us
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link item" href="/blog">
+                <NavLink className="nav-link item" to="/blog">
                   Blog
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link item" href="/contact">
+                <NavLink className="nav-link item" to="/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link item" href="/career">
+                <NavLink className="nav-link item" to="/career">
                   Career
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item mx-2">
                 <div className="get-started">
-                  <a className="text-decoration-none" href="/contact">
+                  <NavLink className="text-decoration-none" to="/contact">
                     <button className="button d-flex justify-content-center align-items-center gap-2 ">
                       <span>Get Started</span>
                     </button>
-                  </a>
+                  </NavLink>
                 </div>
               </li>
             </ul>
