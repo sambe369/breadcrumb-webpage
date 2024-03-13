@@ -14,52 +14,40 @@ const Slider = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <div className="img-box">
-            <img className="d-block" src="vite.svg" alt="" />
+            <img className="d-block" src="avatar-1.jpg" alt="" />
           </div>
           <div className="carousel-caption d-none d-md-block">
             <p className="para one">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
-              sem tempor, varius quam at, luctus dui. Mauris magna metus,
-              dapibus nec turpis vel, semper malesuada ante. Vestibulum idac
-              nisl bibendum scelerisque non non purus. Suspendisse varius nibh
-              non aliquet.
+            "We are immensely pleased with Breadcrumb's exceptional expertise. Their innovative solutions and dedicated team transformed our ideas into a robust, user-friendly application. Highly recommend their services for unparalleled quality and reliability."
             </p>
             <p className="overview">
-              <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+              <b>XXXXX XXXX</b> Onthecase
             </p>
           </div>
         </div>
         <div className="carousel-item">
           <div className="img-box">
-            <img src="vite.svg" alt="" />
+            <img src="avatar-2.jpg" alt="" width={50}/>
           </div>
           <div className="carousel-caption d-none d-md-block">
             <p className="para two">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
-              sem tempor, varius quam at, luctus dui. Mauris magna metus,
-              dapibus nec turpis vel, semper malesuada ante. Vestibulum idac
-              nisl bibendum scelerisque non non purus. Suspendisse varius nibh
-              non aliquet.
+            "Working with Breadcrumb was a game-changer for our business. Their technical prowess and commitment to excellence resulted in a tailored solution that exceeded our expectations. Outstanding service!"
             </p>
             <p className="overview">
-              <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+            <b>XXXXX XXXX</b> EmailLove
             </p>
           </div>
         </div>
         <div className="carousel-item">
           <div className="img-box">
-            <img src="vite.svg" alt="" />
+            <img src="avatar-3.jpg" alt="" />
           </div>
           <div className="carousel-caption d-none d-md-block">
             <p className="para three">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
-              sem tempor, varius quam at, luctus dui. Mauris magna metus,
-              dapibus nec turpis vel, semper malesuada ante. Vestibulum idac
-              nisl bibendum scelerisque non non purus. Suspendisse varius nibh
-              non aliquet.
+            "Breadcrumb's team demonstrated unmatched professionalism and skill. From concept to execution, they delivered a seamless solution, addressing our unique challenges. Their collaborative approach and timely delivery made the entire process smooth and successful."
             </p>
             <p className="overview">
-              <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+            <b>XXXXX XXXX</b> Appkogent
             </p>
           </div>
         </div>

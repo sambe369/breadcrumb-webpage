@@ -5,7 +5,7 @@ export const Testimonial = () => {
   return (
     <div>
       <section className="section-6 testimonial p-5">
-        <div className="container">
+        <div className="container body-container">
           <div className="row align-items-center justify-content-between">
             <div className="col-md">
               <h1>Testimonials</h1>

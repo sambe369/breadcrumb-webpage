@@ -6,7 +6,7 @@ const Services_section_3 = () => {
       <section className="section-3 p-5">
         <div className="container">
           <div className="row align-items-center justify-content-between">
-            <div className="col-md">
+            <div className="col-md" width={500}>
               <span>
                 <h2>API Development</h2>
               </span>
@@ -21,7 +21,7 @@ const Services_section_3 = () => {
               </p>
             </div>
             <div className="col-md images">
-              <img className="img-fluid" src="home3.svg" alt="" />
+              <img className="services-images img-fluid" src="service frontend 2.jpg" alt="" width={600} />
             </div>
           </div>
         </div>

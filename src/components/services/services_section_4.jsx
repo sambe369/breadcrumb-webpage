@@ -9,10 +9,10 @@ const Services_section_4 = () => {
             <div className="col-md">
               <span>
                 <img
-                  className="img-fluid"
-                  src="frontend green.svg"
+                  className="services-images img-fluid"
+                  src="service frontend 3.jpg"
                   alt=""
-                  width={500}
+                  width={600}
                 />
               </span>
             </div>

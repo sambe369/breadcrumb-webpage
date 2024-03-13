@@ -47,10 +47,7 @@ export const Operation = () => {
                     <div className="product-content-tabs_desc">
                       {projectOne && (
                         <p className="desc">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Non, architecto quo. Alias blanditiis
-                          accusantium quam repudiandae aperiam dolorem autem,
-                          nostrum, numquam voluptatem earum quisquam cupiditate?
+                        This Case Management Software for Investigators streamlines complex investigations, offering a user-friendly interface, secure data storage, and collaboration tools. Enhance efficiency and organization in your investigative processes with its powerful solution.
                         </p>
                       )}
                     </div>
@@ -66,10 +63,7 @@ export const Operation = () => {
                     <div className="product-content-tabs_desc">
                       {projectTwo && (
                         <p className="desc">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Non, architecto quo. Alias blanditiis
-                          accusantium quam repudiandae aperiam dolorem autem,
-                          nostrum, numquam voluptatem earum quisquam cupiditate?
+                        Effortlessly export mobile-optimized email code from Figma, reducing development time by half. Prioritize crafting stunning, conversion-focused emails while seamlessly integrating accessible, code-ready designs for efficient email marketing.
                         </p>
                       )}
                     </div>

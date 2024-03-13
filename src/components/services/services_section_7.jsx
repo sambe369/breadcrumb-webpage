@@ -21,7 +21,7 @@ const Services_section_7 = () => {
               </p>
             </div>
             <div className="col-md images">
-              <img className="img-fluid" src="frontend service.jpg" alt="" />
+              <img className="services-images img-fluid" src="service frontend 6.jpg" alt="" width={600}/>
             </div>
           </div>
         </div>

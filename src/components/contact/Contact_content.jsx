@@ -1,4 +1,5 @@
 import React from "react";
+import { ContactUs } from "./contact_form";
 
 const Contact_content = () => {
   return (
@@ -37,7 +38,7 @@ const Contact_content = () => {
                     below.
                   </p>
                 </div>
-                <div className="client_info name mt-5">
+                {/* <div className="client_info name mt-5">
                   <p>Your name</p>
                   <input className="client_input" type="text" />
                 </div>
@@ -59,7 +60,8 @@ const Contact_content = () => {
                 </div>
                 <div className="submit my-4">
                   <button className="submit_button">Submit</button>
-                </div>
+  </div> */}
+                <ContactUs />
               </div>
             </div>
           </div>
