@@ -15,21 +15,14 @@ const About_section_2 = () => {
               </span>
             </div>
             <div className="col-md">
-              <span>
-                <h2>
-                  Code, Create, Conquer: Pioneering solutions for a digital
-                  future.
-                </h2>
-              </span>
-              <p className="my-4">
-                At Breadcrumb, our team crafts code and designs for exceptional
-                digital experiences. We empower you to conquer challenges and
-                seize opportunities.
-              </p>
-              <p className="my-4 second">
-                Associate with us on the journey of innovation as we redefine
-                the landscape of possibilities in the digital realm.
-              </p>
+              
+              
+              <h5>
+                At Breadcrumb, we are passionate about leveraging technology to empower businesses and individuals alike. Founded in 2022, we have dedicated ourselves to crafting innovative software solutions that drive efficiency, enhance productivity, and catalyze growth.
+              </h5>
+              <h5 className="my-4 second">
+                Our team comprises seasoned professionals, each bringing a unique set of skills and expertise to the table. From seasoned developers and designers to project managers and quality assurance specialists, we are united by our commitment to excellence and our relentless pursuit of perfection.
+              </h5>
             </div>
           </div>
         </div>

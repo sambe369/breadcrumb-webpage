@@ -14,10 +14,10 @@ const Slider = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <div className="img-box">
-            <img className="d-block" src="avatar-1.jpg" alt="" />
+            <img className="d-block" src="avatar-1.jpg" alt="" width={50} />
           </div>
           <div className="carousel-caption d-none d-md-block">
-            <p className="para one">
+            <p className="para-one">
             "We are immensely pleased with Breadcrumb's exceptional expertise. Their innovative solutions and dedicated team transformed our ideas into a robust, user-friendly application. Highly recommend their services for unparalleled quality and reliability."
             </p>
             <p className="overview">
@@ -30,8 +30,8 @@ const Slider = () => {
             <img src="avatar-2.jpg" alt="" width={50}/>
           </div>
           <div className="carousel-caption d-none d-md-block">
-            <p className="para two">
-            "Working with Breadcrumb was a game-changer for our business. Their technical prowess and commitment to excellence resulted in a tailored solution that exceeded our expectations. Outstanding service!"
+            <p className="para-two">
+            "Working with Breadcrumb was a game-changer for our business. Their technical prowess and commitment to excellence resulted in a tailored solution that exceeded our expectations. Outstanding service! ooooo oooooo ooooooo"
             </p>
             <p className="overview">
             <b>XXXXX XXXX</b> EmailLove
@@ -40,10 +40,10 @@ const Slider = () => {
         </div>
         <div className="carousel-item">
           <div className="img-box">
-            <img src="avatar-3.jpg" alt="" />
+            <img src="avatar-3.jpg" alt="" width={50}/>
           </div>
           <div className="carousel-caption d-none d-md-block">
-            <p className="para three">
+            <p className="para-three">
             "Breadcrumb's team demonstrated unmatched professionalism and skill. From concept to execution, they delivered a seamless solution, addressing our unique challenges. Their collaborative approach and timely delivery made the entire process smooth and successful."
             </p>
             <p className="overview">

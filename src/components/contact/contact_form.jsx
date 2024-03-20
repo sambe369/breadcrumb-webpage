@@ -38,7 +38,7 @@ export const ContactUs = () => {
       <input className="client_input" type="text" name="subject" />
       <label  className='mt-4 mb-3 d-block'>Message</label>
       <textarea className="client_input message" name="message" />
-      <input className='submit_button mt-4 mb-4 d-block' type="submit" value="Submit" />
+      <input className='submit_button mt-4 mb-5 d-block' type="submit" value="Submit" />
     </form>
   );
 };

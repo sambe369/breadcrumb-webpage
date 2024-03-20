@@ -7,7 +7,7 @@ const Blog = () => {
         <div className="container contact_contain">
           <div className="row">
             <h2 className="text-center text-white heading_contact">
-              Coming soon
+              Coming soon...
             </h2>
           </div>
         </div>

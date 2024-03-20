@@ -6,32 +6,32 @@ const About_section_4 = () => {
     {
       title: "1. Articulate your proposal",
       image: "lightbulb.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Present your proposal clearly and persuasively, highlighting its value proposition and benefits.",
     },
     {
       title: "2. Project specification",
       image: "target.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Comprehensive outline detailing project requirements, objectives, deliverables, and any specific criteria or constraints.",
     },
     {
-      title: "Design and development",
+      title: "3. Design and development",
       image: "lightbulb.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Creation and implementation of tailored solutions, incorporating design and development processes for optimal results.",
     },
     {
       title: "4. Testing and stabilizing",
       image: "lightbulb.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Thorough testing to ensure functionality and stability, followed by refinement for optimal performance and reliability.",
     },
     {
-      title: "5. Project deployment and handover",
+      title: "5. Deployment and handover",
       image: "lightbulb.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Smooth transition as project is deployed and handed over, ensuring seamless integration and client satisfaction.",
     },
     {
       title: "6. Maintainence and support",
       image: "support.svg",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat nisi aperiam expedita quis. Aliquam similique beatae tenetur assumenda culpa quae, ratione cum magnam nesciunt id, aliquid porro quasi illo?",
+      desc: "Continued support and sustenance to uphold functionality, security, and client satisfaction with the implemented solution.",
     },
   ]);
   return (

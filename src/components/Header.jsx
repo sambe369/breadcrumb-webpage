@@ -65,7 +65,7 @@ export const Header = () => {
                   Career
                 </NavLink>
               </li>
-              <li className="nav-item mx-2">
+              {/* <li className="nav-item mx-2">
                 <div className="get-started">
                   <NavLink className="text-decoration-none" to="/contact">
                     <button className="button d-flex justify-content-center align-items-center gap-2 ">
@@ -73,7 +73,7 @@ export const Header = () => {
                     </button>
                   </NavLink>
                 </div>
-              </li>
+  </li> */}
             </ul>
           </div>
         </div>
