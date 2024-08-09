@@ -11,13 +11,10 @@ const Services_section_5 = () => {
                 <h2>Dev Ops</h2>
               </span>
               <p className="my-4">
-                We redefine industry standards using cutting-edge tech,
-                propelling businesses into excellence. Our expert team innovates
-                custom solutions for your unique needs.
+                We ensure seamless database performance and security through continuous monitoring, automated backups, and real-time error detection. Our DevOps approach optimizes and scales your databases, minimizing downtime and ensuring reliability.
               </p>
               <p className="my-4">
-                Embark on a journey with us and witness your aspirations
-                transformed into technological effulgence.
+                With expert repair services, we swiftly resolve issues, keeping your systems running smoothly. Trust us to safeguard your data and enhance your operational efficiency.
               </p>
             </div>
             <div className="col-md images">
