@@ -3,9 +3,9 @@ import React from "react";
 const About_section_2 = () => {
   return (
     <div>
-      <section className="about_section_2 p-5">
+      <section id="whoWeAre" className="about_section_2 p-5">
         <div className="container">
-          <a href="" className="text-decoration-none">
+          <a className="text-decoration-none">
             <h2 className="about_header_1 text-center text-dark">Who we are</h2>
           </a>
           <div className="row align-items-center justify-content-between">

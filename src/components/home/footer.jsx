@@ -11,9 +11,10 @@ export const Footer = () => {
               <div className="footer-logo">
                 <a href="/">
                   <figure>
-                    <img className='footer_logo' src="../bc new logo.svg" width={188} height={70} alt="" />
+                    <img className='footer_logo img-fluid' src="../breadcrumblogo.png" width={188} height={70} alt="" />
                   </figure>
                 </a>
+                <p className="">We streamline the IT landscape, delivering innovative solutions and expertise, guiding businesses to seamless integration and technological success</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-4 col-12">
@@ -23,13 +24,13 @@ export const Footer = () => {
                     <p className="footer-title">About Us</p>
                     <ul className="list">
                       <li>
-                        <a href=""><span>Who We Are</span></a>
+                        <a href="/about#whoWeAre"><span>Who We Are</span></a>
                       </li>
                       <li>
-                        <a href=""><span>Why Us</span></a>
+                        <a href="/about#whyUs"><span>Why Us</span></a>
                       </li>
                       <li>
-                        <a href=""><span>Our Process</span></a>
+                        <a href="/about#ourProcess"><span>Our Process</span></a>
                       </li>
                     </ul>
                   </div>
@@ -55,8 +56,6 @@ export const Footer = () => {
                     <p className="footer-title">Connect with Us</p>
                     <div className="connect_icons">
                       <a href="https://np.linkedin.com/company/breadcrumbtechnologies" target='_blank'><img src="linkedin.svg" alt="" width={24} /></a>
-                      <a href=""><img src="facebookicon.svg" alt="" width={24} /></a>
-                      <a href=""><img src="instagram.svg" alt="" width={24} /></a>
                     </div>
                   </div>
                 </div>

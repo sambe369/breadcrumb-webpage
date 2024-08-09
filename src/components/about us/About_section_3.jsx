@@ -21,9 +21,12 @@ const About_section_3 = () => {
   ]);
   return (
     <div>
-      <section className="about_section_3 p-5">
+      <section id="whyUs" className="about_section_3 p-5">
         <div className="container">
-          <h2 className="header_whyus text-center text-white">Why us</h2>
+          <a href="" className="text-decoration-none">
+            <h2 className="header_whyus text-center text-white">Why us</h2>
+          </a>
+          
           <div className="row row-1 gy-4">
             {reasons.map((reason) => {
               return (

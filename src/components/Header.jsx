@@ -10,7 +10,7 @@ export const Header = () => {
           <a className="navbar-brand" href="/">
             <img
               className="bc-logo img-fluid"
-              src="../bc new logo.svg"
+              src="../breadcrumblogo.png"
               width={188}
               height={70}
               alt="logo"

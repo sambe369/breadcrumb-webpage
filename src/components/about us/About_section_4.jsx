@@ -36,9 +36,12 @@ const About_section_4 = () => {
   ]);
   return (
     <div>
-      <section className="about_section_4 p-5">
+      <section id="ourProcess" className="about_section_4 p-5">
         <div className="container">
-          <h2 className="header_process text-center text-dark">Our process</h2>
+          <a href="" className="text-decoration-none">
+            <h2 className="header_process text-center text-dark">Our process</h2>
+          </a>
+          
           <div className="row row-1 gy-4">
             {processes.map((process) => {
               return (
