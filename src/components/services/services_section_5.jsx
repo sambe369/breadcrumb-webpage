@@ -8,10 +8,10 @@ const Services_section_5 = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-md">
               <span>
-                <h2>Dev Ops</h2>
+                <h2>Database Warehousing</h2>
               </span>
               <p className="my-4">
-                We ensure seamless database performance and security through continuous monitoring, automated backups, and real-time error detection. Our DevOps approach optimizes and scales your databases, minimizing downtime and ensuring reliability.
+                We ensure seamless data warehouse performance with continuous monitoring, automated backups, and real-time anomaly detection. Our DevOps approach optimizes and scales your data warehouse, minimizing downtime and ensuring data integrity.
               </p>
               <p className="my-4">
                 With expert repair services, we swiftly resolve issues, keeping your systems running smoothly. Trust us to safeguard your data and enhance your operational efficiency.
