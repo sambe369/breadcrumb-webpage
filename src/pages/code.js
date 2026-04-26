@@ -115,9 +115,7 @@ export default function Section1() {
 
 // footer //
 
-"use client";
 
-import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa";
 
 // Animation variant for staggered children
