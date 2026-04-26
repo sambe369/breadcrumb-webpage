@@ -1,30 +1,3 @@
-/* export default function Section1() {
-  return (
-    <section className="section_1">
-      <div className="homemain max-w-7xl mx-auto px-6 sm:px-8">
-        <h1 className="subhead">
-          <span>Navigate</span> your virtual landscape.
-        </h1>
-
-        <div className="headings">
-          <h1>Build</h1>
-          <h1>Digital</h1>
-          <h1>Futures</h1>
-        </div>
-
-        <div className="homePara">
-          <p>
-            We simplify navigating the modern IT landscape,<br />
-            providing innovative solutions for seamless integration and
-            expertise,<br />
-            guiding businesses to success in technology.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-} */
-
 
 'use client';
 import { motion } from 'framer-motion';
