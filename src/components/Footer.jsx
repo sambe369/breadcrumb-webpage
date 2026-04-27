@@ -125,7 +125,7 @@ export default function Footer() {
                   href="/about"
                   className="hover:text-[#48A446] transition transform hover:scale-105"
                 >
-                  About
+                  About Us
                 </a>
                 <a
                   href="/services"
@@ -136,10 +136,10 @@ export default function Footer() {
               </div>
               <div className="flex flex-col gap-2">
                 <a
-                  href="/company"
+                  href="/career"
                   className="hover:text-[#48A446] transition transform hover:scale-105"
                 >
-                  Company
+                  Career
                 </a>
                 <a
                   href="/contact"
