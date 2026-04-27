@@ -154,7 +154,7 @@ export default function Footer() {
             <motion.div variants={item} className="mt-4">
               <a
                 href="https://np.linkedin.com/company/breadcrumbtechnologies"
-                className="hover:text-[#48A446] transition text-xl transform hover:scale-110 inline-block"
+                className="hover:text-[#48A446] transition text-xl transform hover:scale-110 inline-block" target="blank"
               >
                 <Linkedin />
               </a>
