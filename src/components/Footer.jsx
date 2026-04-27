@@ -122,7 +122,7 @@ export default function Footer() {
             <motion.div variants={item} className="flex gap-12">
               <div className="flex flex-col gap-2">
                 <a
-                  href="/about"
+                  href="/aboutUs"
                   className="hover:text-[#48A446] transition transform hover:scale-105"
                 >
                   About Us
