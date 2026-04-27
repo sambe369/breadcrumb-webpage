@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://breadcrumbtechnologies.com.np/sitemap.xml
