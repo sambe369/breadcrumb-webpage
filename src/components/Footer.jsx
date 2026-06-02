@@ -96,7 +96,7 @@ export default function Footer() {
                 href="mailto:breadcrumbtechnologies@gmail.com"
                 className="px-6 py-3 border border-gray-600 rounded-full hover:bg-[#48A446] hover:border-[#48A446] hover:text-white transition transform hover:scale-105 text-center"
               >
-                breadcrumbtechnologies@gmail.com
+                info@breadcrumb.com.np
               </a>
               <a
                 href="tel:+9779841186190"
