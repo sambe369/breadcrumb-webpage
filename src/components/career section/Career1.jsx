@@ -49,10 +49,10 @@ export default function Career1() {
         >
           Feel free to reach out to us at{" "}
           <a
-            href="mailto:breadcrumbtechnologies@gmail.com"
+            href="mailto:info@breadcrumb.com.np"
             className="text-white font-semibold hover:text-yellow-300 transition-colors"
           >
-            breadcrumbtechnologies@gmail.com
+            info@breadcrumb.com.np
           </a>
           . We'd love to hear from you.
         </motion.p>

@@ -93,7 +93,7 @@ export default function Footer() {
           >
             <motion.div variants={item} className="flex flex-wrap gap-4">
               <a
-                href="mailto:breadcrumbtechnologies@gmail.com"
+                href="mailto:info@breadcrumb.com.np"
                 className="px-6 py-3 border border-gray-600 rounded-full hover:bg-[#48A446] hover:border-[#48A446] hover:text-white transition transform hover:scale-105 text-center"
               >
                 info@breadcrumb.com.np
