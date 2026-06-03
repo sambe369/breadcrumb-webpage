@@ -98,12 +98,12 @@ export default function Footer() {
               >
                 info@breadcrumb.com.np
               </a>
-              <a
+              {/*<a
                 href="tel:+9779841186190"
                 className="px-6 py-3 border border-gray-600 rounded-full hover:bg-[#48A446] hover:border-[#48A446] hover:text-white transition transform hover:scale-105 text-center"
               >
                 +977 9841186190
-              </a>
+              </a> */}
             </motion.div>
 
             <motion.p variants={item} className="text-gray-400 mt-2">

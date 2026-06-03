@@ -40,7 +40,7 @@ export default function Career3() {
             className="rounded-3xl overflow-hidden shadow-xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1624555130296-e551faf8969b?auto=format&fit=crop&w=1080&q=80"
+              src="/team-collab.png"
               alt="Diverse team meeting"
               width={1000}
               height={600}
