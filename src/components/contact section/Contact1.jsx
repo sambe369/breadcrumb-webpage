@@ -107,7 +107,7 @@ export default function Contact1() {
               <ContactItem
                 icon={<Mail className="w-6 h-6" />}
                 label="Email us"
-                value="info@breadcrumb.com.np"
+                value="info@breadcrumbtechnologies.com.np"
               />
               <ContactItem
                 icon={<Phone className="w-6 h-6" />}
