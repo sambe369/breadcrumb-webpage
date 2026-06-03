@@ -1,134 +1,102 @@
-
 'use client';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function Section1() {
+  // Typing animation state
+  const fullText = "Navigate your virtual landscape";
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    if (displayedText.length < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(fullText.slice(0, displayedText.length + 1));
+      }, 58);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => setIsTyping(false), 400);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayedText]);
+
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white min-h-screen flex items-center justify-center pb-60 relative overflow-hidden">
-      {/* Floating shapes */}
+    <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Subtle background — soft green glows only */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Bigger Cubes */}
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={`cube-${i}`}
-            className="absolute w-20 h-20 rounded-lg bg-white/80 shadow-2xl backdrop-blur-sm"
-            style={{ left: `${10 + i * 18}%`, top: `${15 + (i % 3) * 22}%` }}
-            animate={{
-              y: [-15, 15, -15],
-              rotateX: [0, 180, 360],
-              rotateY: [0, 180, 360],
-              opacity: [0.6, 1, 0.6],
-            }}
-            transition={{ duration: 7 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
-          />
-        ))}
-
-        {/* Bigger Spheres */}
-        {[...Array(4)].map((_, i) => (
-          <motion.div
-            key={`sphere-${i}`}
-            className="absolute w-16 h-16 rounded-full bg-white/80 shadow-2xl backdrop-blur-sm"
-            style={{ right: `${12 + i * 14}%`, top: `${20 + i * 18}%` }}
-            animate={{
-              x: [-20, 20, -20],
-              y: [-25, 25, -25],
-              scale: [1, 1.05, 1],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{ duration: 5 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
-          />
-        ))}
-
-        {/* Pyramids */}
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={`pyramid-${i}`}
-            className="absolute w-0 h-0 border-l-[14px] border-r-[14px] border-b-[28px] border-l-transparent border-r-transparent shadow-xl"
-            style={{ borderBottomColor: 'rgba(255,255,255,0.85)', left: `${50 + i * 12}%`, bottom: `${18 + i * 18}%` }}
-            animate={{
-              rotate: [0, 360],
-              y: [-20, 20, -20],
-              opacity: [0.6, 1, 0.6],
-            }}
-            transition={{ duration: 9 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.6 }}
-          />
-        ))}
-
-        {/* Tiny scattered triangles (accent shapes) */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`triangle-${i}`}
-            className="absolute w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent"
-            style={{
-              borderBottomColor: 'rgba(255,255,255,0.7)',
-              left: `${5 + i * 15}%`,
-              top: `${10 + (i % 4) * 20}%`,
-            }}
-            animate={{
-              y: [-10, 10, -10],
-              rotate: [0, 360],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{ duration: 6 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}
-          />
-        ))}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#48A446]/10 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#48A446]/8 blur-[100px]" />
       </div>
 
       {/* Hero Content */}
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 py-20 relative z-10 text-center">
-        {/* Subtitle */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 py-20 relative z-10 text-center">
+        {/* Subtitle with typing animation */}
+        <div className="mb-8 min-h-[1.75rem]">
           <span className="text-gray-700 font-medium text-xl">
-            Navigate your virtual landscape
+            {displayedText}
+            {isTyping && (
+              <span className="inline-block w-[2px] h-5 bg-gray-700 ml-1 align-middle" />
+            )}
           </span>
-        </motion.div>
+        </div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          <motion.span
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Build{' '}
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#48A446]"
-          >
-            Digital
-          </motion.span>
-          <br />
-          <motion.span
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[#48A446]"
-          >
-            Futures
-          </motion.span>
-        </h1>
-
-        {/* Paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-gray-600 text-lg sm:text-xl leading-relaxed"
+          transition={{ duration: 0.8, delay: 2 }}
+          className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight"
         >
-          We simplify navigating the modern IT landscape, providing innovative solutions 
-          for seamless integration and expertise, guiding businesses to success in technology.
+          Building{' '}
+          <span className="text-[#48A446] relative inline-block">
+            digital futures
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 3 }}
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-[#48A446]/30 origin-left rounded-full"
+            />
+          </span>
+          ,<br />
+          one project at a time.
+        </motion.h1>
+
+        {/* Subhead */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.2 }}
+          className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+        >
+          We design and build thoughtful software, intuitive interfaces,
+          and robust APIs — helping businesses navigate technology with clarity and craft.
         </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="/services"
+            className="relative inline-flex items-center gap-2 px-8 py-4 text-lg font-medium border-2 border-[#48A446] text-[#48A446] rounded-full overflow-hidden group hover:text-white transition-colors duration-300"
+          >
+            <span className="relative z-10">Explore our services</span>
+            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <span className="absolute inset-0 bg-[#48A446] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+          </a>
+
+          <a
+            href="/contact"
+            className="relative inline-flex items-center gap-2 px-8 py-4 text-lg font-medium border-2 border-[#48A446] text-[#48A446] rounded-full overflow-hidden group hover:text-white transition-colors duration-300"
+          >
+            <span className="relative z-10">Get in touch</span>
+            <span className="absolute inset-0 bg-[#48A446] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
-
-

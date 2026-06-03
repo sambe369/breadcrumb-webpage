@@ -57,7 +57,7 @@ export default function About1() {
           className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-3xl"
         >
           <Image
-            src="/connecting-bridges.jpg"
+            src="/connecting-bridge.png"
             alt="Connecting Bridges"
             fill
             className="object-cover"
