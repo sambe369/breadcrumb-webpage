@@ -40,11 +40,11 @@ export default function Section1() {
           </span>
         </div>
 
-        {/* Headline */}
+        {/* Headline — appears 0.5s after typing finishes (~2.3s total) */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2 }}
+          transition={{ duration: 0.8, delay: 2.3 }}
           className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight"
         >
           Building{' '}
@@ -53,7 +53,7 @@ export default function Section1() {
             <motion.span
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 3 }}
+              transition={{ duration: 0.8, delay: 3.5 }}
               className="absolute -bottom-2 left-0 right-0 h-1 bg-[#48A446]/30 origin-left rounded-full"
             />
           </span>
@@ -61,22 +61,22 @@ export default function Section1() {
           one project at a time.
         </motion.h1>
 
-        {/* Subhead */}
+        {/* Subhead — appears 1s after headline (~3.3s total) */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2 }}
+          transition={{ duration: 0.8, delay: 3.3 }}
           className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
         >
           We design and build thoughtful software, intuitive interfaces,
           and robust APIs — helping businesses navigate technology with clarity and craft.
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTAs — appear 1s after subhead (~4.3s total) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.4 }}
+          transition={{ duration: 0.8, delay: 4.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
