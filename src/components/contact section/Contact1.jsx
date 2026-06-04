@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -12,31 +12,43 @@ export default function Contact1() {
     message: "",
   });
 
-  function handleSubmit(e) {
-  e.preventDefault();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState(null); // { type: 'success' | 'error', message: string }
 
-  emailjs
-    .send(
-      "service_ae36lbo",
-      "template_vywxals",
-      {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      },
-      "VJWh8sq-GyxLxEV9Y"
-    )
-    .then(
-      () => {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      },
-      (error) => {
-        console.error(error);
-        alert("Failed to send message. Try again.");
-      }
-    );
-}
+  function showToast(type, message) {
+    setToast({ type, message });
+    // Auto-dismiss after 4 seconds
+    setTimeout(() => setToast(null), 4000);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs
+      .send(
+        "service_ae36lbo",
+        "template_vywxals",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "VJWh8sq-GyxLxEV9Y"
+      )
+      .then(
+        () => {
+          showToast("success", "Message sent successfully. We'll be in touch soon.");
+          setFormData({ name: "", email: "", message: "" });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.error(error);
+          showToast("error", "Couldn't send your message. Please try again or email us directly.");
+          setIsSubmitting(false);
+        }
+      );
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24">
@@ -99,7 +111,7 @@ export default function Contact1() {
             </h1>
 
             <p className="text-lg text-white/90 mb-12 max-w-xl">
-              Let’s transform your ideas into reality. Reach out and discover how
+              Let's transform your ideas into reality. Reach out and discover how
               we can help your business grow.
             </p>
 
@@ -164,6 +176,7 @@ export default function Contact1() {
                 </label>
                 <textarea
                   rows={6}
+                  required
                   className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#48A446] focus:outline-none transition"
                   placeholder="Tell us about your project..."
                   value={formData.message}
@@ -175,16 +188,65 @@ export default function Contact1() {
 
               <button
                 type="submit"
-                className="group w-full bg-[#48A446] text-white py-4 rounded-xl hover:bg-[#3d8a3b] transition-all flex items-center justify-center gap-2 shadow-lg"
+                disabled={isSubmitting}
+                className="group w-full bg-[#48A446] text-white py-4 rounded-xl hover:bg-[#3d8a3b] transition-all flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                {!isSubmitting && (
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                )}
               </button>
             </form>
           </motion.div>
 
         </div>
       </div>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, x: 100, y: 0 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed bottom-6 right-6 z-50 max-w-sm"
+          >
+            <div
+              className={`flex items-start gap-3 px-5 py-4 rounded-2xl shadow-2xl backdrop-blur-xl border ${
+                toast.type === "success"
+                  ? "bg-white/95 border-[#48A446]/30"
+                  : "bg-white/95 border-red-300"
+              }`}
+            >
+              <div className="flex-shrink-0 mt-0.5">
+                {toast.type === "success" ? (
+                  <CheckCircle2 className="w-6 h-6 text-[#48A446]" />
+                ) : (
+                  <AlertCircle className="w-6 h-6 text-red-500" />
+                )}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-gray-900 font-semibold text-sm mb-0.5">
+                  {toast.type === "success" ? "Sent" : "Couldn't send"}
+                </p>
+                <p className="text-gray-600 text-sm leading-snug">
+                  {toast.message}
+                </p>
+              </div>
+              <button
+                onClick={() => setToast(null)}
+                className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Dismiss notification"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
@@ -211,6 +273,7 @@ function InputField({ label, type = "text", ...props }) {
       <label className="block text-gray-700 mb-2">{label}</label>
       <input
         type={type}
+        required
         className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#48A446] focus:outline-none transition"
         {...props}
       />
