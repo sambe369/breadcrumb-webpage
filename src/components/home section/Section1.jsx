@@ -47,7 +47,7 @@ export default function Section1() {
           transition={{ duration: 0.8, delay: 2.3 }}
           className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight"
         >
-          Building{' '}
+          Building{" "}
           <span className="text-[#48A446] relative inline-block">
             digital futures
             <motion.span
@@ -68,8 +68,9 @@ export default function Section1() {
           transition={{ duration: 0.8, delay: 3.3 }}
           className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          We design and build thoughtful software, intuitive interfaces,
-          and robust APIs — helping businesses navigate technology with clarity and craft.
+          We design and build thoughtful software, intuitive interfaces, and
+          robust APIs — helping businesses navigate technology with clarity and
+          craft.
         </motion.p>
 
         {/* CTAs — appear 1s after subhead (~4.3s total) */}
@@ -79,21 +80,25 @@ export default function Section1() {
           transition={{ duration: 0.8, delay: 4.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
+          {/* Primary CTA — green outline → green fill */}
           <a
             href="/services"
             className="relative inline-flex items-center gap-2 px-8 py-4 text-lg font-medium border-2 border-[#48A446] text-[#48A446] rounded-full overflow-hidden group hover:text-white transition-colors duration-300"
           >
             <span className="relative z-10">Explore our services</span>
-            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
             <span className="absolute inset-0 bg-[#48A446] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
           </a>
 
+          {/* Secondary CTA — gray outline → gray fill */}
           <a
             href="/contact"
-            className="relative inline-flex items-center gap-2 px-8 py-4 text-lg font-medium border-2 border-[#48A446] text-[#48A446] rounded-full overflow-hidden group hover:text-white transition-colors duration-300"
+            className="relative inline-flex items-center gap-2 px-8 py-4 text-lg font-medium border-2 border-gray-300 text-gray-700 rounded-full overflow-hidden group hover:text-white transition-colors duration-300"
           >
             <span className="relative z-10">Get in touch</span>
-            <span className="absolute inset-0 bg-[#48A446] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+            <span className="absolute inset-0 bg-gray-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
           </a>
         </motion.div>
       </div>
