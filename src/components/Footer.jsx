@@ -27,18 +27,20 @@ export default function Footer() {
       <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-[#48A446]/5 blur-3xl"></div>
 
       {/* Top "Have an Idea?" Section */}
-      <div className="py-24 text-center relative overflow-hidden">
-        {/* GIF Background */}
+      <div className="py-40 text-center relative overflow-hidden">
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif"
-            alt="Digital particles background"
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
-            style={{ filter: "hue-rotate(90deg) brightness(0.8)" }}
+          <video
+            src="/prism-loop.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
 
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gray-900/75"></div>
+          <div className="absolute inset-0 bg-gray-900/50"></div>
           <div className="absolute inset-0 bg-[#48A446]/5"></div>
         </div>
 
@@ -154,7 +156,8 @@ export default function Footer() {
             <motion.div variants={item} className="mt-4">
               <a
                 href="https://np.linkedin.com/company/breadcrumbtechnologies"
-                className="hover:text-[#48A446] transition text-xl transform hover:scale-110 inline-block" target="blank"
+                className="hover:text-[#48A446] transition text-xl transform hover:scale-110 inline-block"
+                target="_blank"
               >
                 <Linkedin />
               </a>
@@ -170,7 +173,8 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-8 text-center text-gray-500 text-sm"
         >
-          &copy; {new Date().getFullYear()} Breadcrumb Technologies. All rights reserved.
+          &copy; {new Date().getFullYear()} Breadcrumb Technologies. All rights
+          reserved.
         </motion.div>
       </div>
     </footer>
