@@ -1,154 +1,246 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import {
-  ArrowRight,
-  Zap,
   Code,
-  Database,
-  Cpu,
+  Server,
+  Zap,
+  Compass,
+  BarChart3,
   Palette,
   Shield,
-  Settings,
+  Wrench,
 } from "lucide-react";
 
-// Services array
 const services = [
   {
     icon: Code,
     title: "Frontend Development",
     description:
-      "Creating stunning, responsive user interfaces that captivate and engage your audience with modern technologies.",
-    technologies: ["React", "Vue.js", "Angular", "TypeScript"],
-    step: "01",
+      "Production-grade interfaces built for speed and clarity. We work in your preferred stack and own the entire pipeline from design handoff to launch.",
+    technologies: ["React", "Next.js", "Vue", "TypeScript"],
+    glow: "#48A446", // vibrant brand green
   },
   {
-    icon: Database,
+    icon: Server,
     title: "Backend Development",
     description:
-      "Building robust, scalable server-side solutions that power your applications with reliability and performance.",
-    technologies: ["Node.js", "Python", "PHP", "Cloud Services"],
-    step: "02",
+      "Scalable, secure server-side architecture. Designed to handle real load, integrate with anything, and stay maintainable as your product grows.",
+    technologies: ["Node.js", "Python", "PostgreSQL", "AWS"],
+    glow: "#2D7A6E", // deep teal-green
   },
   {
     icon: Zap,
     title: "API Development",
     description:
-      "Designing and implementing powerful APIs that seamlessly connect your applications and services.",
-    technologies: ["REST", "GraphQL", "WebSockets", "Microservices"],
-    step: "03",
+      "Clean, well-documented APIs that connect your services. Built with care so other developers actually enjoy using them.",
+    technologies: ["REST", "GraphQL", "WebSockets", "OpenAPI"],
+    glow: "#7CB342", // lime-green
   },
   {
-    icon: Cpu,
+    icon: Compass,
     title: "IT Consultancy",
     description:
-      "Providing strategic guidance to optimize your technology stack and drive digital transformation.",
-    technologies: ["Strategy", "Architecture", "Planning", "Optimization"],
-    step: "04",
+      "Honest, vendor-neutral guidance on your tech strategy. We help you choose the right tools and avoid expensive mistakes.",
+    technologies: ["Strategy", "Architecture", "Audits", "Roadmaps"],
+    glow: "#88A878", // sage-green
   },
   {
-    icon: Database,
-    title: "Database Warehousing",
+    icon: BarChart3,
+    title: "Database & Warehousing",
     description:
-      "Implementing comprehensive data solutions for analytics, reporting, and business intelligence.",
-    technologies: ["SQL", "NoSQL", "ETL", "Analytics"],
-    step: "05",
+      "From OLTP databases to analytics warehouses — we design schemas that perform today and scale tomorrow.",
+    technologies: ["PostgreSQL", "BigQuery", "ETL", "Analytics"],
+    glow: "#2E7D32", // forest-green
   },
   {
     icon: Palette,
     title: "UI/UX Design",
     description:
-      "Crafting intuitive, beautiful designs that enhance user experience and drive engagement.",
-    technologies: ["Figma", "Prototyping", "User Research", "Design Systems"],
-    step: "06",
+      "Interfaces shaped by user research, refined through prototyping, and shipped as design systems your team can build with.",
+    technologies: ["Figma", "Prototyping", "Research", "Design Systems"],
+    glow: "#E89B6A", // warm coral — strategic accent #1
   },
   {
     icon: Shield,
     title: "Quality Assurance",
     description:
-      "Ensuring your applications meet the highest standards through comprehensive testing strategies.",
-    technologies: ["Automated Testing", "Manual QA", "Performance", "Security"],
-    step: "07",
+      "Comprehensive testing — automated, manual, performance, security — so you can ship with confidence.",
+    technologies: ["Cypress", "Playwright", "Performance", "Security"],
+    glow: "#8B9D5A", // olive-green
   },
   {
-    icon: Settings,
-    title: "Maintenance",
+    icon: Wrench,
+    title: "Maintenance & Support",
     description:
-      "Providing ongoing support to keep your applications running smoothly and securely.",
-    technologies: ["Monitoring", "Updates", "Support", "Optimization"],
-    step: "08",
+      "Ongoing care for the software we build. Monitoring, updates, performance tuning, and a direct line when something needs attention.",
+    technologies: ["Monitoring", "Updates", "SLA Support", "Optimization"],
+    glow: "#D4A574", // warm amber/gold — strategic accent #2
   },
 ];
 
 export default function Service2() {
+  const [hoveredColor, setHoveredColor] = useState(null);
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, {
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
+
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#48A446] via-[#48A446]/50 to-[#48A446]/20"></div>
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Default subtle background glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-[#48A446]/6 blur-[140px]" />
+        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#48A446]/8 blur-[120px]" />
+      </div>
 
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-[#48A446] rounded-full border-4 border-white shadow-lg z-10"></div>
+      {/* Themed background wash — fades to the hovered service's color */}
+      <AnimatePresence>
+        {hoveredColor && (
+          <motion.div
+            key={hoveredColor}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute inset-0 pointer-events-none"
+          >
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] rounded-full blur-[160px]"
+              style={{ background: `${hoveredColor}10` }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-                {/* Content */}
-                <div
-                  className={`ml-20 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
-                  }`}
-                >
-                  <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group hover:shadow-2xl transition-all duration-300">
-                    {/* Step number */}
-                    <div className="inline-flex items-center gap-3 mb-6">
-                      <span className="text-3xl font-bold text-[#48A446]/30">
-                        {service.step}
-                      </span>
-                      <div className="w-12 h-12 rounded-xl bg-[#48A446]/10 flex items-center justify-center group-hover:bg-[#48A446] transition-colors duration-300">
-                        <service.icon className="w-6 h-6 text-[#48A446] group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </div>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+        {/* Section Header */}
+        <div ref={headingRef} className="max-w-2xl mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <span className="text-[#48A446] font-medium text-sm tracking-widest uppercase">
+              Full Capabilities
+            </span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-[1.1] tracking-tight"
+          >
+            Everything you need,{" "}
+            <span className="text-[#48A446] relative inline-block">
+              under one roof
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={headingInView ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.8, delay: 1.1 }}
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-[#48A446]/30 origin-left rounded-full"
+              />
+            </span>
+            .
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-lg text-gray-600 leading-relaxed"
+          >
+            From the first sketch to long-term support, we cover the full
+            lifecycle of building and running thoughtful software.
+          </motion.p>
+        </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {service.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-[#48A446]/10 text-[#48A446] rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* <button className="inline-flex items-center gap-2 text-[#48A446] font-medium hover:gap-3 transition-all duration-300">
-                      Learn More <ArrowRight className="w-4 h-4" />
-                    </button> */}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.title}
+              service={service}
+              index={index}
+              onHoverStart={() => setHoveredColor(service.glow)}
+              onHoverEnd={() => setHoveredColor(null)}
+            />
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ServiceCard({ service, index, onHoverStart, onHoverEnd }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+      transition={{ duration: 0.6, delay: (index % 4) * 0.1 }}
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
+      className="relative group"
+    >
+      {/* Outer ambient halo — sits behind the card */}
+      <div
+        className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+        style={{
+          background: `radial-gradient(circle at center, ${service.glow}, transparent 70%)`,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Card */}
+      <div className="relative bg-white rounded-2xl p-8 border border-gray-100 transition-all duration-300 flex flex-col h-full group-hover:border-transparent">
+        {/* Themed border ring + shadow on hover */}
+        <div
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          style={{
+            boxShadow: `0 0 0 1.5px ${service.glow}40, 0 12px 40px -8px ${service.glow}50`,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Icon */}
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+          style={{
+            backgroundColor: `${service.glow}15`,
+          }}
+        >
+          <service.icon
+            className="w-6 h-6 transition-colors duration-300"
+            style={{ color: service.glow }}
+          />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">
+          {service.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          {service.description}
+        </p>
+
+        {/* Tech tags */}
+        <div className="flex flex-wrap gap-2">
+          {service.technologies.map((tech, techIndex) => (
+            <span
+              key={techIndex}
+              className="px-2.5 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
   );
 }
