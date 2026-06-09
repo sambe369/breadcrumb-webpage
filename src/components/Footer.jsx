@@ -40,7 +40,7 @@ export default function Footer() {
           />
 
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gray-900/50"></div>
+          <div className="absolute inset-0 bg-gray-1000/50"></div>
           <div className="absolute inset-0 bg-[#48A446]/5"></div>
         </div>
 
