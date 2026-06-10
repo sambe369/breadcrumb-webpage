@@ -13,11 +13,10 @@ export default function Contact1() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [toast, setToast] = useState(null); // { type: 'success' | 'error', message: string }
+  const [toast, setToast] = useState(null);
 
   function showToast(type, message) {
     setToast({ type, message });
-    // Auto-dismiss after 4 seconds
     setTimeout(() => setToast(null), 4000);
   }
 
@@ -51,109 +50,102 @@ export default function Contact1() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute inset-0"
-          animate={{
-            background: [
-              "linear-gradient(135deg, #48A446 0%, #3d8a3b 50%, #48A446 100%)",
-              "linear-gradient(135deg, #3d8a3b 0%, #48A446 50%, #3d8a3b 100%)",
-              "linear-gradient(135deg, #48A446 0%, #3d8a3b 50%, #48A446 100%)",
-            ],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* Floating Orbs */}
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-white/10"
-            style={{
-              width: 200 + i * 120,
-              height: 200 + i * 120,
-              left: `${15 + i * 25}%`,
-              top: `${10 + i * 20}%`,
-            }}
-            animate={{
-              x: [0, 40, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 10 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-32 bg-white">
+      {/* Subtle background glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-[#48A446]/10 blur-[140px]" />
+        <div className="absolute bottom-1/4 right-0 w-[450px] h-[450px] rounded-full bg-[#48A446]/8 blur-[120px]" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
 
           {/* LEFT – INFO */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Ready to Start <br /> Your Project?
+            {/* Eyebrow */}
+            <div className="mb-4">
+              <span className="text-[#48A446] font-medium text-sm tracking-widest uppercase">
+                Get in Touch
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-[1.1] tracking-tight">
+              Let's build something{" "}
+              <span className="text-[#48A446] relative inline-block">
+                meaningful
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-[#48A446]/30 origin-left rounded-full"
+                />
+              </span>
+              .
             </h1>
 
-            <p className="text-lg text-white/90 mb-12 max-w-xl">
-              Let's transform your ideas into reality. Reach out and discover how
-              we can help your business grow.
+            {/* Subhead */}
+            <p className="text-lg text-gray-600 mb-12 leading-relaxed max-w-xl">
+              Tell us about your project. We'll get back within 24 hours
+              with thoughts, questions, or a call invitation.
             </p>
 
-            <div className="space-y-8">
+            {/* Contact info */}
+            <div className="space-y-6">
               <ContactItem
-                icon={<Mail className="w-6 h-6" />}
-                label="Email us"
+                icon={<Mail className="w-5 h-5" />}
+                label="Email"
                 value="info@breadcrumbtechnologies.com.np"
+                href="mailto:info@breadcrumbtechnologies.com.np"
               />
               <ContactItem
-                icon={<Phone className="w-6 h-6" />}
-                label="Call us"
+                icon={<Phone className="w-5 h-5" />}
+                label="Phone"
                 value="(+977) 9841186190, 9765232597"
+                href="tel:+9779841186190"
               />
               <ContactItem
-                icon={<MapPin className="w-6 h-6" />}
-                label="Visit us"
+                icon={<MapPin className="w-5 h-5" />}
+                label="Office"
                 value="Devinagar 10, Kathmandu, Nepal"
               />
             </div>
 
-            <div className="flex items-center gap-3 mt-12 text-white/90">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-              <span>We usually respond within 24 hours</span>
+            {/* Status pill */}
+            <div className="inline-flex items-center gap-2.5 mt-10 px-4 py-2 rounded-full bg-[#48A446]/10 border border-[#48A446]/20">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-[#48A446] opacity-75 animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-[#48A446]" />
+              </span>
+              <span className="text-[#48A446] text-sm font-medium">
+                Usually respond within 24 hours
+              </span>
             </div>
           </motion.div>
 
           {/* RIGHT – FORM */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="bg-white rounded-3xl p-10 border border-gray-100 shadow-xl shadow-gray-200/40"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight">
               Send us a message
             </h2>
+            <p className="text-gray-600 text-sm mb-8">
+              Quick form, no calls until you're ready.
+            </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <InputField
                 label="Name"
-                placeholder="John Doe"
+                placeholder="Your full name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
@@ -161,9 +153,9 @@ export default function Contact1() {
               />
 
               <InputField
-                label="Email Address"
+                label="Email address"
                 type="email"
-                placeholder="john@example.com"
+                placeholder="you@example.com"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -171,14 +163,14 @@ export default function Contact1() {
               />
 
               <div>
-                <label className="block text-gray-700 mb-2">
-                  Your Message
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Your message
                 </label>
                 <textarea
-                  rows={6}
+                  rows={5}
                   required
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#48A446] focus:outline-none transition"
-                  placeholder="Tell us about your project..."
+                  className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#48A446] focus:outline-none focus:ring-4 focus:ring-[#48A446]/10 transition resize-none"
+                  placeholder="Tell us about your project — what you're building, what you need help with, when you'd like to start."
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -189,12 +181,15 @@ export default function Contact1() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group w-full bg-[#48A446] text-white py-4 rounded-xl hover:bg-[#3d8a3b] transition-all flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                className="relative w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium border-2 border-[#48A446] text-[#48A446] rounded-full overflow-hidden group hover:text-white transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed mt-2"
               >
-                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                <span className="relative z-10">
+                  {isSubmitting ? "Sending..." : "Send message"}
+                </span>
                 {!isSubmitting && (
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 )}
+                <span className="absolute inset-0 bg-[#48A446] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               </button>
             </form>
           </motion.div>
@@ -253,28 +248,44 @@ export default function Contact1() {
 
 /* ---------------- Components ---------------- */
 
-function ContactItem({ icon, label, value }) {
-  return (
-    <div className="flex items-center gap-4">
-      <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+function ContactItem({ icon, label, value, href }) {
+  const content = (
+    <div className="flex items-center gap-4 group">
+      <div className="w-11 h-11 rounded-xl bg-[#48A446]/10 flex items-center justify-center text-[#48A446] group-hover:bg-[#48A446] group-hover:text-white transition-colors duration-300">
         {icon}
       </div>
       <div>
-        <div className="text-sm text-white/80">{label}</div>
-        <div className="text-white font-medium">{value}</div>
+        <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">
+          {label}
+        </div>
+        <div className="text-gray-900 font-medium group-hover:text-[#48A446] transition-colors duration-300">
+          {value}
+        </div>
       </div>
     </div>
   );
+
+  if (href) {
+    return (
+      <a href={href} className="block">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
 }
 
 function InputField({ label, type = "text", ...props }) {
   return (
     <div>
-      <label className="block text-gray-700 mb-2">{label}</label>
+      <label className="block text-sm font-medium text-gray-700 mb-2">
+        {label}
+      </label>
       <input
         type={type}
         required
-        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#48A446] focus:outline-none transition"
+        className="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#48A446] focus:outline-none focus:ring-4 focus:ring-[#48A446]/10 transition"
         {...props}
       />
     </div>
