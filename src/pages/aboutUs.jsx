@@ -22,7 +22,7 @@ export default function AboutUs() {
         <About1 />
         <About2 />
         {/* <About3 /> */}
-        {/* <About4 /> */}
+        <About4 />
       </main>
     </>
   );
