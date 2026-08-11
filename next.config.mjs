@@ -11,8 +11,16 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.giphy.com",
       },
-
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/aboutUs',
+        permanent: true,
+      },
+    ];
   },
 };
 
