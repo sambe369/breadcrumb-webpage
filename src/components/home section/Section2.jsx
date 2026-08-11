@@ -18,7 +18,7 @@ const products = [
       "Seamless Figma integration",
     ],
     image: "/emaillove.png",
-    url: "https://emaillove.com",
+    url: "https://emaillove.com/figma-plugin",
     // Pink/coral — playful, creative, design-tool energy
     theme: {
       accent: "#E11D6F",
