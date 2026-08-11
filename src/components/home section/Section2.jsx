@@ -44,7 +44,7 @@ const products = [
       "Comprehensive audits and reports",
     ],
     image: "/onthecase.png",
-    url: "https://onthecase.io",
+    url: "https://onthecase.ai",
     // Deep blue — trust, legal, professional, secure
     theme: {
       accent: "#1E40AF",
